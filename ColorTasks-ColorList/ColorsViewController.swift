@@ -16,7 +16,7 @@ class ColorsViewController: UIViewController {
     
     var portraitConstraints = [NSLayoutConstraint]()
     var landscapeConstraints = [NSLayoutConstraint]()
-    
+
     var selectedColor = colorsList.first {
         didSet {
             descriptionView.backgroundColor = selectedColor?.color
@@ -32,9 +32,12 @@ class ColorsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
+        portraitConstraints = getPortraitModeConstraints()
+        landscapeConstraints = getLandscapeModeConstraints()
         showAppropriateView()
     }
     
+    // The issue is in deactivating the constraints,
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         showAppropriateView()
@@ -53,15 +56,14 @@ class ColorsViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.isNavigationBarHidden = false
         title = "Colors"
-        print(landscapeConstraints.count)
-        activatePortraitModeConstraints()
-        view.layoutIfNeeded()
+        NSLayoutConstraint.deactivate(landscapeConstraints)
+        NSLayoutConstraint.activate(portraitConstraints)
     }
     
     func landscapeView(){
         navigationController?.isNavigationBarHidden = true
-        activateLandscapeModeConstraints()
-        view.layoutIfNeeded()
+        NSLayoutConstraint.deactivate(portraitConstraints)
+        NSLayoutConstraint.activate(landscapeConstraints)
     }
     
     func configureViews(){
@@ -95,9 +97,8 @@ class ColorsViewController: UIViewController {
 
     }
     
-    func activatePortraitModeConstraints(){
-        NSLayoutConstraint.deactivate(landscapeConstraints)
-        portraitConstraints = [
+    func getPortraitModeConstraints() -> [NSLayoutConstraint]{
+        return [
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.widthAnchor.constraint(equalTo: view.widthAnchor),
@@ -115,12 +116,10 @@ class ColorsViewController: UIViewController {
             descriptionLabel.trailingAnchor.constraint(equalTo: descriptionView.layoutMarginsGuide.trailingAnchor),
             descriptionLabel.topAnchor.constraint(equalTo: descriptionHeaderLabel.bottomAnchor, constant: 15),
         ]
-        NSLayoutConstraint.activate(portraitConstraints)
     }
     
-    func activateLandscapeModeConstraints() {
-        NSLayoutConstraint.deactivate(portraitConstraints)
-        landscapeConstraints = [
+    func getLandscapeModeConstraints() -> [NSLayoutConstraint] {
+        return [
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3),
@@ -138,7 +137,6 @@ class ColorsViewController: UIViewController {
             descriptionLabel.trailingAnchor.constraint(equalTo: descriptionView.layoutMarginsGuide.trailingAnchor),
             descriptionLabel.topAnchor.constraint(equalTo: descriptionHeaderLabel.bottomAnchor, constant: 15),
         ]
-        NSLayoutConstraint.activate(landscapeConstraints)
     }
 }
 
