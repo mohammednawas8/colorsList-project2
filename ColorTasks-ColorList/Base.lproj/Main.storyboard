@@ -15,22 +15,37 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pJa-q5-nf5">
+                                <rect key="frame" x="0.0" y="155" width="393" height="663"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pJa-q5-nf5" secondAttribute="bottom" id="0aC-VV-3aG"/>
+                            <constraint firstItem="pJa-q5-nf5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Dic-lg-FZs"/>
+                            <constraint firstItem="pJa-q5-nf5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="lI1-5k-C0H"/>
+                            <constraint firstItem="pJa-q5-nf5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ysj-S8-SJN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QfN-Ev-mbn"/>
+                    <connections>
+                        <outlet property="colorsTableView" destination="pJa-q5-nf5" id="HZY-nL-Hlr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="898.47328244274809" y="8.4507042253521139"/>
+            <point key="canvasLocation" x="571.75572519083971" y="7.746478873239437"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bmx-4d-90B">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8rj-f4-Yle" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="COE-7f-ufF">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="COE-7f-ufF">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -40,7 +55,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XeW-Ap-Wzx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-28.244274809160306" y="8.4507042253521139"/>
+            <point key="canvasLocation" x="-265" y="8"/>
         </scene>
     </scenes>
     <resources>

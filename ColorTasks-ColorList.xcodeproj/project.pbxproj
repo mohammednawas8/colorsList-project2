@@ -17,7 +17,8 @@
 		700A932C2B46BEB300608225 /* ColorTasks_ColorListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700A932B2B46BEB300608225 /* ColorTasks_ColorListUITests.swift */; };
 		700A932E2B46BEB300608225 /* ColorTasks_ColorListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700A932D2B46BEB300608225 /* ColorTasks_ColorListUITestsLaunchTests.swift */; };
 		700A933B2B46C93300608225 /* ColorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700A933A2B46C93300608225 /* ColorInfo.swift */; };
-		700A933D2B4714AB00608225 /* ColorCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700A933C2B4714AB00608225 /* ColorCellTableViewCell.swift */; };
+		7039907A2B4C3ECE00CB5F80 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703990782B4C3ECE00CB5F80 /* ColorTableViewCell.swift */; };
+		7039907B2B4C3ECE00CB5F80 /* ColorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703990792B4C3ECE00CB5F80 /* ColorTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,8 @@
 		700A932B2B46BEB300608225 /* ColorTasks_ColorListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTasks_ColorListUITests.swift; sourceTree = "<group>"; };
 		700A932D2B46BEB300608225 /* ColorTasks_ColorListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTasks_ColorListUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		700A933A2B46C93300608225 /* ColorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorInfo.swift; sourceTree = "<group>"; };
-		700A933C2B4714AB00608225 /* ColorCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCellTableViewCell.swift; sourceTree = "<group>"; };
+		703990782B4C3ECE00CB5F80 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
+		703990792B4C3ECE00CB5F80 /* ColorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,15 +105,16 @@
 		700A93092B46BEB100608225 /* ColorTasks-ColorList */ = {
 			isa = PBXGroup;
 			children = (
-				700A930A2B46BEB100608225 /* AppDelegate.swift */,
-				700A930C2B46BEB100608225 /* SceneDelegate.swift */,
 				700A930E2B46BEB100608225 /* ColorsViewController.swift */,
-				700A933A2B46C93300608225 /* ColorInfo.swift */,
-				700A933C2B4714AB00608225 /* ColorCellTableViewCell.swift */,
 				700A93102B46BEB100608225 /* Main.storyboard */,
+				700A933A2B46C93300608225 /* ColorInfo.swift */,
+				700A930C2B46BEB100608225 /* SceneDelegate.swift */,
+				700A930A2B46BEB100608225 /* AppDelegate.swift */,
 				700A93132B46BEB300608225 /* Assets.xcassets */,
 				700A93152B46BEB300608225 /* LaunchScreen.storyboard */,
 				700A93182B46BEB300608225 /* Info.plist */,
+				703990782B4C3ECE00CB5F80 /* ColorTableViewCell.swift */,
+				703990792B4C3ECE00CB5F80 /* ColorTableViewCell.xib */,
 			);
 			path = "ColorTasks-ColorList";
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				700A93172B46BEB300608225 /* LaunchScreen.storyboard in Resources */,
+				7039907B2B4C3ECE00CB5F80 /* ColorTableViewCell.xib in Resources */,
 				700A93142B46BEB300608225 /* Assets.xcassets in Resources */,
 				700A93122B46BEB100608225 /* Main.storyboard in Resources */,
 			);
@@ -265,7 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				700A930F2B46BEB100608225 /* ColorsViewController.swift in Sources */,
-				700A933D2B4714AB00608225 /* ColorCellTableViewCell.swift in Sources */,
+				7039907A2B4C3ECE00CB5F80 /* ColorTableViewCell.swift in Sources */,
 				700A933B2B46C93300608225 /* ColorInfo.swift in Sources */,
 				700A930B2B46BEB100608225 /* AppDelegate.swift in Sources */,
 				700A930D2B46BEB100608225 /* SceneDelegate.swift in Sources */,
