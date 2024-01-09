@@ -11,9 +11,11 @@ class ColorsViewController: UIViewController {
 
     @IBOutlet var colorsTableView: UITableView!
     
+    @IBOutlet var colorDescriptionView: ColorDescriptionView!
+    
     var selectedColor = colorsList.first {
         didSet {
-
+           updateDescriptionView()
         }
     }
     
@@ -37,9 +39,9 @@ class ColorsViewController: UIViewController {
     
     func showAppropriateView(){
         if UIDevice.current.orientation.isPortrait {
-           
+            navigationController?.navigationBar.isHidden = false
         } else {
-            
+            navigationController?.navigationBar.isHidden = true
         }
     }
     
@@ -61,6 +63,15 @@ class ColorsViewController: UIViewController {
         colorsTableView.dataSource = self
         let cellNib = UINib(nibName: Constants.CELL_NIB_NAME, bundle: nil) // main bundle
         colorsTableView.register(cellNib, forCellReuseIdentifier: Constants.CELL_IDENTIFIER)
+        
+        updateDescriptionView()
+    }
+    
+    func updateDescriptionView(){
+        if let selectedColor {
+            colorDescriptionView.setDescription(description: selectedColor.description)
+            colorDescriptionView.setBackgroundColor(color: selectedColor.value)
+        }
     }
 }
 
@@ -71,8 +82,7 @@ extension ColorsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CELL_IDENTIFIER, for: indexPath) as! ColorTableViewCell
-        cell.colorLabel.text = colorsList[indexPath.row].name
-        cell.backgroundColor = colorsList[indexPath.row].value
+        cell.set(color: colorsList[indexPath.row])
         return cell
     }
     

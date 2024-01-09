@@ -19,6 +19,8 @@
 		700A933B2B46C93300608225 /* ColorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700A933A2B46C93300608225 /* ColorInfo.swift */; };
 		7039907A2B4C3ECE00CB5F80 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703990782B4C3ECE00CB5F80 /* ColorTableViewCell.swift */; };
 		7039907B2B4C3ECE00CB5F80 /* ColorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703990792B4C3ECE00CB5F80 /* ColorTableViewCell.xib */; };
+		7039907F2B4D3A9F00CB5F80 /* ColorDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7039907E2B4D3A9F00CB5F80 /* ColorDescriptionView.swift */; };
+		703990852B4D4AED00CB5F80 /* ColorDescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703990842B4D4AED00CB5F80 /* ColorDescriptionView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		700A933A2B46C93300608225 /* ColorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorInfo.swift; sourceTree = "<group>"; };
 		703990782B4C3ECE00CB5F80 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
 		703990792B4C3ECE00CB5F80 /* ColorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorTableViewCell.xib; sourceTree = "<group>"; };
+		7039907E2B4D3A9F00CB5F80 /* ColorDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDescriptionView.swift; sourceTree = "<group>"; };
+		703990842B4D4AED00CB5F80 /* ColorDescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorDescriptionView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,13 +112,15 @@
 				700A930E2B46BEB100608225 /* ColorsViewController.swift */,
 				700A93102B46BEB100608225 /* Main.storyboard */,
 				700A933A2B46C93300608225 /* ColorInfo.swift */,
+				703990782B4C3ECE00CB5F80 /* ColorTableViewCell.swift */,
+				703990792B4C3ECE00CB5F80 /* ColorTableViewCell.xib */,
+				7039907E2B4D3A9F00CB5F80 /* ColorDescriptionView.swift */,
+				703990842B4D4AED00CB5F80 /* ColorDescriptionView.xib */,
 				700A930C2B46BEB100608225 /* SceneDelegate.swift */,
 				700A930A2B46BEB100608225 /* AppDelegate.swift */,
 				700A93132B46BEB300608225 /* Assets.xcassets */,
 				700A93152B46BEB300608225 /* LaunchScreen.storyboard */,
 				700A93182B46BEB300608225 /* Info.plist */,
-				703990782B4C3ECE00CB5F80 /* ColorTableViewCell.swift */,
-				703990792B4C3ECE00CB5F80 /* ColorTableViewCell.xib */,
 			);
 			path = "ColorTasks-ColorList";
 			sourceTree = "<group>";
@@ -241,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				700A93172B46BEB300608225 /* LaunchScreen.storyboard in Resources */,
+				703990852B4D4AED00CB5F80 /* ColorDescriptionView.xib in Resources */,
 				7039907B2B4C3ECE00CB5F80 /* ColorTableViewCell.xib in Resources */,
 				700A93142B46BEB300608225 /* Assets.xcassets in Resources */,
 				700A93122B46BEB100608225 /* Main.storyboard in Resources */,
@@ -269,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				700A930F2B46BEB100608225 /* ColorsViewController.swift in Sources */,
+				7039907F2B4D3A9F00CB5F80 /* ColorDescriptionView.swift in Sources */,
 				7039907A2B4C3ECE00CB5F80 /* ColorTableViewCell.swift in Sources */,
 				700A933B2B46C93300608225 /* ColorInfo.swift in Sources */,
 				700A930B2B46BEB100608225 /* AppDelegate.swift in Sources */,

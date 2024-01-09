@@ -13,13 +13,12 @@ class ColorTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        selectionStyle = .none
+        colorLabel.textColor = .white
     }
     
+    func set(color: ColorInfo){
+        colorLabel.text = color.name
+        backgroundColor = color.value
+    }
 }
