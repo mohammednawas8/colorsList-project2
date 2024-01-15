@@ -20,15 +20,14 @@ class ColorDescriptionView : UIView {
         commonInit()
     }
     
-    required init?(coder: NSCoder) {
+    required init?(coder: NSCoder) { // Called to render the view on the Interface Builder
         super.init(coder: coder)
         commonInit()
     }
     
     func commonInit(){
         view = loadViewFromNib(nibName: Constants.NIB_NAME)
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.frame = self.bounds
+        view.frame = self.bounds // Matching the loaded view from the nib with the ColorDescriptionView
         addSubview(view)
     }
     

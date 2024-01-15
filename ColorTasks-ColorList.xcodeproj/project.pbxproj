@@ -16,11 +16,25 @@
 		700A93222B46BEB300608225 /* ColorTasks_ColorListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700A93212B46BEB300608225 /* ColorTasks_ColorListTests.swift */; };
 		700A932C2B46BEB300608225 /* ColorTasks_ColorListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700A932B2B46BEB300608225 /* ColorTasks_ColorListUITests.swift */; };
 		700A932E2B46BEB300608225 /* ColorTasks_ColorListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700A932D2B46BEB300608225 /* ColorTasks_ColorListUITestsLaunchTests.swift */; };
-		700A933B2B46C93300608225 /* ColorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700A933A2B46C93300608225 /* ColorInfo.swift */; };
 		7039907A2B4C3ECE00CB5F80 /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703990782B4C3ECE00CB5F80 /* ColorTableViewCell.swift */; };
 		7039907B2B4C3ECE00CB5F80 /* ColorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703990792B4C3ECE00CB5F80 /* ColorTableViewCell.xib */; };
 		7039907F2B4D3A9F00CB5F80 /* ColorDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7039907E2B4D3A9F00CB5F80 /* ColorDescriptionView.swift */; };
 		703990852B4D4AED00CB5F80 /* ColorDescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703990842B4D4AED00CB5F80 /* ColorDescriptionView.xib */; };
+		706E41632B4EB18A0051B3A2 /* ColorsViewController+Drag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E41622B4EB18A0051B3A2 /* ColorsViewController+Drag.swift */; };
+		706E41652B4EB1A40051B3A2 /* ColorsViewController+Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E41642B4EB1A40051B3A2 /* ColorsViewController+Drop.swift */; };
+		706E41672B4EB1B10051B3A2 /* ColorsViewController+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E41662B4EB1B10051B3A2 /* ColorsViewController+Data.swift */; };
+		706E416C2B4FEC920051B3A2 /* ColorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E416B2B4FEC920051B3A2 /* ColorTextField.swift */; };
+		706E416E2B4FECA10051B3A2 /* ColorTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706E416D2B4FECA10051B3A2 /* ColorTextField.xib */; };
+		706E41702B5006B20051B3A2 /* AddColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E416F2B5006B20051B3A2 /* AddColorViewController.swift */; };
+		706E41722B533D4C0051B3A2 /* AddColorViewController+ColorPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E41712B533D4C0051B3A2 /* AddColorViewController+ColorPickerDelegate.swift */; };
+		706E41C32B542CA40051B3A2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E41C22B542CA40051B3A2 /* Extensions.swift */; };
+		706E41C52B543A9C0051B3A2 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E41C42B543A9C0051B3A2 /* UIHelper.swift */; };
+		706E41C72B543F300051B3A2 /* Color+Dragging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E41C62B543F300051B3A2 /* Color+Dragging.swift */; };
+		706E41C92B5444080051B3A2 /* AddColorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E41C82B5444080051B3A2 /* AddColorDelegate.swift */; };
+		706E41CB2B5444900051B3A2 /* ColorsViewController+AddColorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E41CA2B5444900051B3A2 /* ColorsViewController+AddColorDelegate.swift */; };
+		706E41DD2B5532530051B3A2 /* Colors.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 706E41DB2B5532530051B3A2 /* Colors.xcdatamodeld */; };
+		706E41EE2B5543170051B3A2 /* Color+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E41EC2B5543170051B3A2 /* Color+CoreDataClass.swift */; };
+		706E41EF2B5543170051B3A2 /* Color+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E41ED2B5543170051B3A2 /* Color+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,11 +68,25 @@
 		700A93272B46BEB300608225 /* ColorTasks-ColorListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ColorTasks-ColorListUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		700A932B2B46BEB300608225 /* ColorTasks_ColorListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTasks_ColorListUITests.swift; sourceTree = "<group>"; };
 		700A932D2B46BEB300608225 /* ColorTasks_ColorListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTasks_ColorListUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		700A933A2B46C93300608225 /* ColorInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorInfo.swift; sourceTree = "<group>"; };
 		703990782B4C3ECE00CB5F80 /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
 		703990792B4C3ECE00CB5F80 /* ColorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorTableViewCell.xib; sourceTree = "<group>"; };
 		7039907E2B4D3A9F00CB5F80 /* ColorDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDescriptionView.swift; sourceTree = "<group>"; };
 		703990842B4D4AED00CB5F80 /* ColorDescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorDescriptionView.xib; sourceTree = "<group>"; };
+		706E41622B4EB18A0051B3A2 /* ColorsViewController+Drag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorsViewController+Drag.swift"; sourceTree = "<group>"; };
+		706E41642B4EB1A40051B3A2 /* ColorsViewController+Drop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorsViewController+Drop.swift"; sourceTree = "<group>"; };
+		706E41662B4EB1B10051B3A2 /* ColorsViewController+Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorsViewController+Data.swift"; sourceTree = "<group>"; };
+		706E416B2B4FEC920051B3A2 /* ColorTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTextField.swift; sourceTree = "<group>"; };
+		706E416D2B4FECA10051B3A2 /* ColorTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorTextField.xib; sourceTree = "<group>"; };
+		706E416F2B5006B20051B3A2 /* AddColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddColorViewController.swift; sourceTree = "<group>"; };
+		706E41712B533D4C0051B3A2 /* AddColorViewController+ColorPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddColorViewController+ColorPickerDelegate.swift"; sourceTree = "<group>"; };
+		706E41C22B542CA40051B3A2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		706E41C42B543A9C0051B3A2 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		706E41C62B543F300051B3A2 /* Color+Dragging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Dragging.swift"; sourceTree = "<group>"; };
+		706E41C82B5444080051B3A2 /* AddColorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddColorDelegate.swift; sourceTree = "<group>"; };
+		706E41CA2B5444900051B3A2 /* ColorsViewController+AddColorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorsViewController+AddColorDelegate.swift"; sourceTree = "<group>"; };
+		706E41DC2B5532530051B3A2 /* Colors.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Colors.xcdatamodel; sourceTree = "<group>"; };
+		706E41EC2B5543170051B3A2 /* Color+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+CoreDataClass.swift"; sourceTree = "<group>"; };
+		706E41ED2B5543170051B3A2 /* Color+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,18 +137,17 @@
 		700A93092B46BEB100608225 /* ColorTasks-ColorList */ = {
 			isa = PBXGroup;
 			children = (
-				700A930E2B46BEB100608225 /* ColorsViewController.swift */,
+				706E41C12B542C890051B3A2 /* Helper */,
+				706E41602B4EB0B80051B3A2 /* Model */,
+				706E41612B4EB14E0051B3A2 /* ColorsViewController */,
+				706E416A2B4FEB5A0051B3A2 /* AddColorViewController */,
 				700A93102B46BEB100608225 /* Main.storyboard */,
-				700A933A2B46C93300608225 /* ColorInfo.swift */,
-				703990782B4C3ECE00CB5F80 /* ColorTableViewCell.swift */,
-				703990792B4C3ECE00CB5F80 /* ColorTableViewCell.xib */,
-				7039907E2B4D3A9F00CB5F80 /* ColorDescriptionView.swift */,
-				703990842B4D4AED00CB5F80 /* ColorDescriptionView.xib */,
 				700A930C2B46BEB100608225 /* SceneDelegate.swift */,
 				700A930A2B46BEB100608225 /* AppDelegate.swift */,
 				700A93132B46BEB300608225 /* Assets.xcassets */,
 				700A93152B46BEB300608225 /* LaunchScreen.storyboard */,
 				700A93182B46BEB300608225 /* Info.plist */,
+				706E41DB2B5532530051B3A2 /* Colors.xcdatamodeld */,
 			);
 			path = "ColorTasks-ColorList";
 			sourceTree = "<group>";
@@ -140,6 +167,53 @@
 				700A932D2B46BEB300608225 /* ColorTasks_ColorListUITestsLaunchTests.swift */,
 			);
 			path = "ColorTasks-ColorListUITests";
+			sourceTree = "<group>";
+		};
+		706E41602B4EB0B80051B3A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				706E41C62B543F300051B3A2 /* Color+Dragging.swift */,
+				706E41EC2B5543170051B3A2 /* Color+CoreDataClass.swift */,
+				706E41ED2B5543170051B3A2 /* Color+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		706E41612B4EB14E0051B3A2 /* ColorsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				700A930E2B46BEB100608225 /* ColorsViewController.swift */,
+				706E41CA2B5444900051B3A2 /* ColorsViewController+AddColorDelegate.swift */,
+				706E41622B4EB18A0051B3A2 /* ColorsViewController+Drag.swift */,
+				706E41642B4EB1A40051B3A2 /* ColorsViewController+Drop.swift */,
+				706E41662B4EB1B10051B3A2 /* ColorsViewController+Data.swift */,
+				703990782B4C3ECE00CB5F80 /* ColorTableViewCell.swift */,
+				703990792B4C3ECE00CB5F80 /* ColorTableViewCell.xib */,
+				7039907E2B4D3A9F00CB5F80 /* ColorDescriptionView.swift */,
+				703990842B4D4AED00CB5F80 /* ColorDescriptionView.xib */,
+			);
+			path = ColorsViewController;
+			sourceTree = "<group>";
+		};
+		706E416A2B4FEB5A0051B3A2 /* AddColorViewController */ = {
+			isa = PBXGroup;
+			children = (
+				706E416F2B5006B20051B3A2 /* AddColorViewController.swift */,
+				706E416B2B4FEC920051B3A2 /* ColorTextField.swift */,
+				706E416D2B4FECA10051B3A2 /* ColorTextField.xib */,
+				706E41712B533D4C0051B3A2 /* AddColorViewController+ColorPickerDelegate.swift */,
+				706E41C82B5444080051B3A2 /* AddColorDelegate.swift */,
+			);
+			path = AddColorViewController;
+			sourceTree = "<group>";
+		};
+		706E41C12B542C890051B3A2 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				706E41C22B542CA40051B3A2 /* Extensions.swift */,
+				706E41C42B543A9C0051B3A2 /* UIHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +323,7 @@
 				700A93172B46BEB300608225 /* LaunchScreen.storyboard in Resources */,
 				703990852B4D4AED00CB5F80 /* ColorDescriptionView.xib in Resources */,
 				7039907B2B4C3ECE00CB5F80 /* ColorTableViewCell.xib in Resources */,
+				706E416E2B4FECA10051B3A2 /* ColorTextField.xib in Resources */,
 				700A93142B46BEB300608225 /* Assets.xcassets in Resources */,
 				700A93122B46BEB100608225 /* Main.storyboard in Resources */,
 			);
@@ -275,12 +350,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				706E41C92B5444080051B3A2 /* AddColorDelegate.swift in Sources */,
 				700A930F2B46BEB100608225 /* ColorsViewController.swift in Sources */,
 				7039907F2B4D3A9F00CB5F80 /* ColorDescriptionView.swift in Sources */,
+				706E41EF2B5543170051B3A2 /* Color+CoreDataProperties.swift in Sources */,
+				706E41722B533D4C0051B3A2 /* AddColorViewController+ColorPickerDelegate.swift in Sources */,
+				706E41C52B543A9C0051B3A2 /* UIHelper.swift in Sources */,
+				706E41C72B543F300051B3A2 /* Color+Dragging.swift in Sources */,
+				706E416C2B4FEC920051B3A2 /* ColorTextField.swift in Sources */,
+				706E41CB2B5444900051B3A2 /* ColorsViewController+AddColorDelegate.swift in Sources */,
+				706E41672B4EB1B10051B3A2 /* ColorsViewController+Data.swift in Sources */,
+				706E41632B4EB18A0051B3A2 /* ColorsViewController+Drag.swift in Sources */,
+				706E41652B4EB1A40051B3A2 /* ColorsViewController+Drop.swift in Sources */,
 				7039907A2B4C3ECE00CB5F80 /* ColorTableViewCell.swift in Sources */,
-				700A933B2B46C93300608225 /* ColorInfo.swift in Sources */,
+				706E41DD2B5532530051B3A2 /* Colors.xcdatamodeld in Sources */,
 				700A930B2B46BEB100608225 /* AppDelegate.swift in Sources */,
+				706E41702B5006B20051B3A2 /* AddColorViewController.swift in Sources */,
+				706E41C32B542CA40051B3A2 /* Extensions.swift in Sources */,
 				700A930D2B46BEB100608225 /* SceneDelegate.swift in Sources */,
+				706E41EE2B5543170051B3A2 /* Color+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +704,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		706E41DB2B5532530051B3A2 /* Colors.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				706E41DC2B5532530051B3A2 /* Colors.xcdatamodel */,
+			);
+			currentVersion = 706E41DC2B5532530051B3A2 /* Colors.xcdatamodel */;
+			path = Colors.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 700A92FF2B46BEB100608225 /* Project object */;
 }
