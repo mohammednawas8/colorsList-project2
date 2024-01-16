@@ -69,10 +69,11 @@ class AddColorViewController: UIViewController {
         color.name = titleTextField.textField.text
         color.colorDescription = descriptionTextView.text
         color.value = selectedColor.toHexString()
+        color.id = UUID().uuidString
         do {
             try context.save()
             navigationController?.popViewController(animated: true)
-            delegate?.didAddNewColor()
+            delegate?.didAddNewColor(color: color)
             print("Saved new color successfully")
         } catch {
             present(createAlertController(message: "Something went wrong while saving the color"), animated: true)

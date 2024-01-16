@@ -257,11 +257,6 @@
             <point key="canvasLocation" x="1446.9767441860465" y="7.7253218884120178"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="2Aw-E6-n1v">
-            <size key="intrinsicContentSize" width="300" height="50"/>
-        </designable>
-    </designables>
     <resources>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

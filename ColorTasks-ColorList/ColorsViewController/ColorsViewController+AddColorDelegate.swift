@@ -8,7 +8,7 @@
 import Foundation
 
 extension ColorsViewController: AddColorDelegate {
-    func didAddNewColor() {
-        fetchColors()
+    func didAddNewColor(color: Color) {
+        colorList.append(color)
     }
 }

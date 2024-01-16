@@ -39,13 +39,14 @@ extension ColorsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
-        userPreferences.saveColorOrder(colors: colorList)
     }
     
-    private func moveItem(from sourceIndex: Int, to destinationIndex: Int){
+    private func moveItem(from sourceIndex: Int, to destinationIndex: Int) {
+        var colorListCopy = colorList
         guard sourceIndex != destinationIndex else { return }
-        let movedColor = colorList.remove(at: sourceIndex)
-        colorList.insert(movedColor, at: destinationIndex)
+        let movedColor = colorListCopy.remove(at: sourceIndex)
+        colorListCopy.insert(movedColor, at: destinationIndex)
+        colorList = colorListCopy
     }
     
 }

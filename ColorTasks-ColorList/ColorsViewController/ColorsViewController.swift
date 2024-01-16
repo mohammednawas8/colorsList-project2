@@ -5,6 +5,7 @@
 //  Created by mac on 04/01/2024.
 //
 
+// TODO: Fix the bug
 import UIKit
 
 class ColorsViewController: UIViewController {
@@ -21,6 +22,7 @@ class ColorsViewController: UIViewController {
     var colorList = [Color]() {
         didSet {
             colorsTableView.reloadData()
+            userPreferences.saveColorOrder(colors: colorList)
         }
     }
     
@@ -70,28 +72,20 @@ class ColorsViewController: UIViewController {
     }
     
     func fetchColors() {
-        do {
-            let unorderedColorList = try context.fetch(Color.fetchRequest())
-            let colorOrder = userPreferences.readColorOrder()
-            guard colorOrder != nil else {
-                self.colorList = unorderedColorList
-                return
-            }
-            colorList = getOrderedColorList(colorOrder!, unorderedColorList)
-            selectedColor = selectedColor === nil ? colorList.first ?? nil : selectedColor
-        } catch {
-            present(createAlertController(message: "Can't load the colors"), animated: true)
-        }
+        colorList = getOrderedColorList()
+        selectedColor = selectedColor == nil ? colorList.first ?? nil : selectedColor
     }
     
-    func getOrderedColorList(_ colorOrder: [String], _ unorderedColorList: [Color]) -> [Color] {
-        var orderedColors = [Color]()
-        for id in colorOrder {
-            if let color = unorderedColorList.first(where: { $0.id == id }) {
-                orderedColors.append(color)
-            }
-        }
-        return orderedColors
+    func getOrderedColorList() -> [Color] {
+        let colorOrder = userPreferences.readColorOrder() ?? []
+          let unorderedColors = try? context.fetch(Color.fetchRequest())
+          var orderedColors = [Color]()
+          for id in colorOrder {
+              if let color = unorderedColors?.first(where: { $0.id == id }) {
+                  orderedColors.append(color)
+              }
+          }
+          return orderedColors
     }
     
     func showAppropriateView(){
@@ -117,12 +111,9 @@ class ColorsViewController: UIViewController {
     func configureViews(){
         colorsTableView.delegate = self
         colorsTableView.dataSource = self
-        colorsTableView.dragDelegate = self
-        colorsTableView.dropDelegate = self
-        colorsTableView.dragInteractionEnabled = true
         let cellNib = UINib(nibName: Constants.CELL_NIB_NAME, bundle: nil) // main bundle
         colorsTableView.register(cellNib, forCellReuseIdentifier: Constants.CELL_IDENTIFIER)
-        
+
         updateDescriptionView()
     }
     
@@ -176,14 +167,14 @@ class ColorsViewController: UIViewController {
         
         navigationController?.isToolbarHidden = false
         colorsTableView.allowsMultipleSelectionDuringEditing = true
-        colorsTableView.isEditing = true
+        colorsTableView.setEditing(true, animated: true)
     }
     
     func editModeOff(){
         editButton.setTitle("Edit", for: .normal)
         navigationController?.isToolbarHidden = true
         colorsTableView.allowsMultipleSelectionDuringEditing = false
-        colorsTableView.isEditing = false
+        colorsTableView.setEditing(false, animated: true)
     }
     
     @objc func deleteButtonTapped() {
@@ -196,13 +187,12 @@ class ColorsViewController: UIViewController {
             context.delete(colorList[indexPath.row])
             do {
                 try context.save()
+                colorList.remove(at: indexPath.row)
             } catch {
                 present(createAlertController(message: "Can't delete color"), animated: true)
                 return
             }
         }
-        fetchColors()
-        colorsTableView.reloadData()
         if shouldUpdateTheSelectedColor {
             selectedColor = colorList.first
         }

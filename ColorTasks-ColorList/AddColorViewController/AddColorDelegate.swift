@@ -8,5 +8,5 @@
 import Foundation
 
 protocol AddColorDelegate: AnyObject {
-   func didAddNewColor()
+    func didAddNewColor(color: Color)
 }
