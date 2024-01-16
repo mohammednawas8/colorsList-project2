@@ -34,7 +34,8 @@
 		706E41CB2B5444900051B3A2 /* ColorsViewController+AddColorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E41CA2B5444900051B3A2 /* ColorsViewController+AddColorDelegate.swift */; };
 		706E41DD2B5532530051B3A2 /* Colors.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 706E41DB2B5532530051B3A2 /* Colors.xcdatamodeld */; };
 		706E41EE2B5543170051B3A2 /* Color+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E41EC2B5543170051B3A2 /* Color+CoreDataClass.swift */; };
-		706E41EF2B5543170051B3A2 /* Color+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E41ED2B5543170051B3A2 /* Color+CoreDataProperties.swift */; };
+		708122BF2B567A770022F20D /* UserPreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708122BE2B567A770022F20D /* UserPreferencesManager.swift */; };
+		708122C52B568B500022F20D /* Color+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708122C32B568B500022F20D /* Color+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +87,8 @@
 		706E41CA2B5444900051B3A2 /* ColorsViewController+AddColorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorsViewController+AddColorDelegate.swift"; sourceTree = "<group>"; };
 		706E41DC2B5532530051B3A2 /* Colors.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Colors.xcdatamodel; sourceTree = "<group>"; };
 		706E41EC2B5543170051B3A2 /* Color+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+CoreDataClass.swift"; sourceTree = "<group>"; };
-		706E41ED2B5543170051B3A2 /* Color+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		708122BE2B567A770022F20D /* UserPreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesManager.swift; sourceTree = "<group>"; };
+		708122C32B568B500022F20D /* Color+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,10 +139,11 @@
 		700A93092B46BEB100608225 /* ColorTasks-ColorList */ = {
 			isa = PBXGroup;
 			children = (
-				706E41C12B542C890051B3A2 /* Helper */,
 				706E41602B4EB0B80051B3A2 /* Model */,
 				706E41612B4EB14E0051B3A2 /* ColorsViewController */,
 				706E416A2B4FEB5A0051B3A2 /* AddColorViewController */,
+				706E41C12B542C890051B3A2 /* Helper */,
+				708122BE2B567A770022F20D /* UserPreferencesManager.swift */,
 				700A93102B46BEB100608225 /* Main.storyboard */,
 				700A930C2B46BEB100608225 /* SceneDelegate.swift */,
 				700A930A2B46BEB100608225 /* AppDelegate.swift */,
@@ -174,7 +177,7 @@
 			children = (
 				706E41C62B543F300051B3A2 /* Color+Dragging.swift */,
 				706E41EC2B5543170051B3A2 /* Color+CoreDataClass.swift */,
-				706E41ED2B5543170051B3A2 /* Color+CoreDataProperties.swift */,
+				708122C32B568B500022F20D /* Color+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,14 +356,15 @@
 				706E41C92B5444080051B3A2 /* AddColorDelegate.swift in Sources */,
 				700A930F2B46BEB100608225 /* ColorsViewController.swift in Sources */,
 				7039907F2B4D3A9F00CB5F80 /* ColorDescriptionView.swift in Sources */,
-				706E41EF2B5543170051B3A2 /* Color+CoreDataProperties.swift in Sources */,
 				706E41722B533D4C0051B3A2 /* AddColorViewController+ColorPickerDelegate.swift in Sources */,
 				706E41C52B543A9C0051B3A2 /* UIHelper.swift in Sources */,
+				708122C52B568B500022F20D /* Color+CoreDataProperties.swift in Sources */,
 				706E41C72B543F300051B3A2 /* Color+Dragging.swift in Sources */,
 				706E416C2B4FEC920051B3A2 /* ColorTextField.swift in Sources */,
 				706E41CB2B5444900051B3A2 /* ColorsViewController+AddColorDelegate.swift in Sources */,
 				706E41672B4EB1B10051B3A2 /* ColorsViewController+Data.swift in Sources */,
 				706E41632B4EB18A0051B3A2 /* ColorsViewController+Drag.swift in Sources */,
+				708122BF2B567A770022F20D /* UserPreferencesManager.swift in Sources */,
 				706E41652B4EB1A40051B3A2 /* ColorsViewController+Drop.swift in Sources */,
 				7039907A2B4C3ECE00CB5F80 /* ColorTableViewCell.swift in Sources */,
 				706E41DD2B5532530051B3A2 /* Colors.xcdatamodeld in Sources */,

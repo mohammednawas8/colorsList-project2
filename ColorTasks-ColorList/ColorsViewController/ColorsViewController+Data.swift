@@ -10,18 +10,18 @@ import UIKit
 extension ColorsViewController: UITableViewDelegate, UITableViewDataSource {
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return colorsList.count
+        return colorList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CELL_IDENTIFIER, for: indexPath) as! ColorTableViewCell
-        cell.set(color: colorsList[indexPath.row])
+        cell.set(color: colorList[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !isInEditMode {
-            selectedColor = colorsList[indexPath.row]
+            selectedColor = colorList[indexPath.row]
         }
     }
     
@@ -39,12 +39,13 @@ extension ColorsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
+        userPreferences.saveColorOrder(colors: colorList)
     }
     
     private func moveItem(from sourceIndex: Int, to destinationIndex: Int){
         guard sourceIndex != destinationIndex else { return }
-        let movedColor = colorsList.remove(at: sourceIndex)
-        colorsList.insert(movedColor, at: destinationIndex)
+        let movedColor = colorList.remove(at: sourceIndex)
+        colorList.insert(movedColor, at: destinationIndex)
     }
     
 }

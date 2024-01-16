@@ -2,7 +2,7 @@
 //  Color+CoreDataProperties.swift
 //  ColorTasks-ColorList
 //
-//  Created by mac on 15/01/2024.
+//  Created by mac on 16/01/2024.
 //
 //
 
@@ -19,6 +19,7 @@ extension Color {
     @NSManaged public var colorDescription: String?
     @NSManaged public var name: String?
     @NSManaged public var value: String?
+    @NSManaged public var id: String?
 
 }
 

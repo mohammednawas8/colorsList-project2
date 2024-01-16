@@ -9,6 +9,6 @@ import UIKit
 
 extension ColorsViewController: UITableViewDragDelegate {
     func tableView(_ tableView: UITableView, itemsForBeginning session: UIDragSession, at indexPath: IndexPath) -> [UIDragItem] {
-        return Color.dragItem(for: indexPath, colors: colorsList)
+        return Color.dragItem(for: indexPath, colors: colorList)
     }
 }

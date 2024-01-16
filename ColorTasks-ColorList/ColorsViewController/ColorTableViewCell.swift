@@ -20,12 +20,11 @@ class ColorTableViewCell: UITableViewCell {
         let view = UIView()
         view.backgroundColor = .clear
         selectedBackgroundView = view
-
     }
     
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: animated)
-        // Customize the editing ui for the cell
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        changeReorderColor()
     }
     
     func set(color: Color){
@@ -35,4 +34,11 @@ class ColorTableViewCell: UITableViewCell {
         }
     }
     
+    func changeReorderColor() {
+        for subview in subviews {
+            if let reorderControl = subview.subviews.first(where: { $0 is UIImageView }) as? UIImageView {
+                reorderControl.image = reorderControl.image?.withTintColor(.white)
+            }
+        }
+    }
 }

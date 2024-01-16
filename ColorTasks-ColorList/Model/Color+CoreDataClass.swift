@@ -11,6 +11,7 @@ import CoreData
 
 @objc(Color)
 public class Color: NSManagedObject {
+    
     private static let sharedDescription = "Cerulean whispers of tranquility across the canvas, evoking a serene sky's embrace. Scarlet bursts like a fervent flame, igniting passion within every stroke. Emerald dances with nature's lushness, a verdant tapestry of life unfurled. Indigo, a mysterious veil, cloaks the night in enigmatic hues, weaving dreams in its velvety depths."
     
     static func getDefaultColors() -> [(value: String, name: String, description:String)] {

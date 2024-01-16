@@ -8,7 +8,7 @@
 import UIKit
 
 class ColorsViewController: UIViewController {
-
+    
     @IBOutlet var colorsTableView: UITableView!
     @IBOutlet var colorDescriptionView: ColorDescriptionView!
     var editButton: UIButton!
@@ -16,8 +16,9 @@ class ColorsViewController: UIViewController {
     var selectedColorIndices = [Int]()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    var colorsList = [Color]() {
+    let userPreferences: UserPreferencesManager = UserPreferencesManagerImpl.getInstance()
+
+    var colorList = [Color]() {
         didSet {
             colorsTableView.reloadData()
         }
@@ -48,7 +49,7 @@ class ColorsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectedColor = colorsList.first
+        selectedColor = colorList.first
         configureViews()
         showAppropriateView()
         configureNavigationBar()
@@ -69,8 +70,28 @@ class ColorsViewController: UIViewController {
     }
     
     func fetchColors() {
-        colorsList = try! context.fetch(Color.fetchRequest())
-        selectedColor = selectedColor === nil ? colorsList.first ?? nil : selectedColor
+        do {
+            let unorderedColorList = try context.fetch(Color.fetchRequest())
+            let colorOrder = userPreferences.readColorOrder()
+            guard colorOrder != nil else {
+                self.colorList = unorderedColorList
+                return
+            }
+            colorList = getOrderedColorList(colorOrder!, unorderedColorList)
+            selectedColor = selectedColor === nil ? colorList.first ?? nil : selectedColor
+        } catch {
+            present(createAlertController(message: "Can't load the colors"), animated: true)
+        }
+    }
+    
+    func getOrderedColorList(_ colorOrder: [String], _ unorderedColorList: [Color]) -> [Color] {
+        var orderedColors = [Color]()
+        for id in colorOrder {
+            if let color = unorderedColorList.first(where: { $0.id == id }) {
+                orderedColors.append(color)
+            }
+        }
+        return orderedColors
     }
     
     func showAppropriateView(){
@@ -167,8 +188,12 @@ class ColorsViewController: UIViewController {
     
     @objc func deleteButtonTapped() {
         guard let selectedIndices = colorsTableView.indexPathsForSelectedRows else { return }
+        var shouldUpdateTheSelectedColor = false
         for indexPath in selectedIndices {
-            context.delete(colorsList[indexPath.row])
+            if !shouldUpdateTheSelectedColor {
+                shouldUpdateTheSelectedColor = colorList[indexPath.row] == selectedColor
+            }
+            context.delete(colorList[indexPath.row])
             do {
                 try context.save()
             } catch {
@@ -178,6 +203,9 @@ class ColorsViewController: UIViewController {
         }
         fetchColors()
         colorsTableView.reloadData()
+        if shouldUpdateTheSelectedColor {
+            selectedColor = colorList.first
+        }
     }
     
     @objc func addButtonTapped() {

@@ -13,7 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private struct Constants {
         static let COLORS_MODEL = "Colors"
-        static let DEFAULT_COLORS = "DefaultColors"
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -68,19 +67,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func saveDefaultColors() {
-        let defaults = UserDefaults.standard
-        let shouldSaveDefaultColors = !defaults.bool(forKey: Constants.DEFAULT_COLORS)
+        let userPreferences: UserPreferencesManager = UserPreferencesManagerImpl.getInstance()
+        let shouldSaveDefaultColors = !userPreferences.readAppEntry()
         if shouldSaveDefaultColors {
             let context = persistentContainer.viewContext
-            Color.getDefaultColors().forEach { colorTuple in
+            var defaultColors = [Color]()
+            for colorTuple in Color.getDefaultColors() {
                 let color = Color(context: context)
                 color.value = colorTuple.value
                 color.colorDescription = colorTuple.description
                 color.name = colorTuple.name
-               saveContext()
+                color.id = UUID().uuidString
+                defaultColors.append(color)
+                saveContext()
             }
-            saveContext()
-            defaults.setValue(true, forKey: Constants.DEFAULT_COLORS)
+            userPreferences.saveAppEntry()
+            userPreferences.saveColorOrder(colors: defaultColors)
         }
     }
 }
