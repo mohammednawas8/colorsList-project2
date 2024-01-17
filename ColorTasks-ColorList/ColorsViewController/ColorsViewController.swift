@@ -90,9 +90,9 @@ class ColorsViewController: UIViewController {
     
     func showAppropriateView(){
         if UIDevice.current.orientation.isPortrait {
-            navigationController?.navigationBar.isHidden = false
+            portraitView()
         } else {
-            navigationController?.navigationBar.isHidden = true
+            landscapeView()
         }
     }
     
