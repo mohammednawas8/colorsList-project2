@@ -14,10 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private struct Constants {
         static let COLORS_MODEL = "Colors"
     }
+    
+    private var colorDataManager: ColorDataManager {
+        ColorDataManager(persistentContainer: persistentContainer)
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         setUpTapBar()
-        saveDefaultColors()
+        colorDataManager.saveDefaultColors()
         return true
     }
 
@@ -55,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return container
     }()
     
-    // when we update/add new data we add it to the context, to reflect the new data in the Database we need to save the context.
+    // when we update/add new data we add it to the context, so to reflect the new data in the Database we need to save the context.
     func saveContext(backgroundContext: NSManagedObjectContext? = nil) {
         let context = backgroundContext ?? persistentContainer.viewContext
         guard context.hasChanges else { return }
@@ -66,24 +70,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func saveDefaultColors() {
-        let userPreferences: UserPreferencesManager = UserPreferencesManagerImpl.getInstance()
-        let shouldSaveDefaultColors = !userPreferences.readAppEntry()
-        if shouldSaveDefaultColors {
-            let context = persistentContainer.viewContext
-            var defaultColors = [Color]()
-            for colorTuple in Color.getDefaultColors() {
-                let color = Color(context: context)
-                color.value = colorTuple.value
-                color.colorDescription = colorTuple.description
-                color.name = colorTuple.name
-                color.id = UUID().uuidString
-                defaultColors.append(color)
-                saveContext()
-            }
-            userPreferences.saveAppEntry()
-            userPreferences.saveColorOrder(colors: defaultColors)
-        }
-    }
 }
 

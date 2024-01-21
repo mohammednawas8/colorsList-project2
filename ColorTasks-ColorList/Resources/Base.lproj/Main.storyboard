@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8rj-f4-Yle">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,15 +13,15 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ColorsViewController" customModule="ColorTasks_ColorList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pJa-q5-nf5">
-                                <rect key="frame" x="0.0" y="144" width="414" height="359"/>
+                                <rect key="frame" x="0.0" y="155.00000000000003" width="393" height="331.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Bf-Tz-EMK" customClass="ColorDescriptionView" customModule="ColorTasks_ColorList" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="503" width="414" height="393"/>
+                                <rect key="frame" x="0.0" y="486.66666666666674" width="393" height="365.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
@@ -106,7 +106,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8rj-f4-Yle" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="COE-7f-ufF">
-                        <rect key="frame" x="0.0" y="48" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -123,11 +123,11 @@
             <objects>
                 <viewController storyboardIdentifier="AddViewController" id="Iyb-Qf-0i6" customClass="AddColorViewController" customModule="ColorTasks_ColorList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0YR-b3-U6M">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oCu-Mi-KoH">
-                                <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <navigationItem title="New Color" id="0SH-ri-L69">
@@ -141,7 +141,7 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Aw-E6-n1v" customClass="ColorTextField" customModule="ColorTasks_ColorList" customModuleProvider="target">
-                                <rect key="frame" x="20" y="107" width="374" height="80"/>
+                                <rect key="frame" x="20" y="118" width="353" height="80"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="PXP-GR-PSi"/>
@@ -160,16 +160,16 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpV-RX-FD7">
-                                <rect key="frame" x="30" y="217" width="364" height="30"/>
+                                <rect key="frame" x="30" y="228" width="343" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idA-m0-qrw">
-                                        <rect key="frame" x="0.0" y="0.0" width="264" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="243" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Yh-MX-KAN">
-                                        <rect key="frame" x="264" y="0.0" width="100" height="30"/>
+                                        <rect key="frame" x="243" y="0.0" width="100" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="FXb-Zj-9Zc"/>
                                             <constraint firstAttribute="height" constant="30" id="Uur-0e-BLv"/>
@@ -185,13 +185,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNq-fW-2wC">
-                                <rect key="frame" x="30" y="286" width="94.5" height="20.5"/>
+                                <rect key="frame" x="29.999999999999993" y="297" width="94.333333333333314" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EKW-iU-frf">
-                                <rect key="frame" x="20" y="316.5" width="374" height="200"/>
+                                <rect key="frame" x="20" y="327.33333333333331" width="353" height="199.99999999999994"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="JWc-jx-Euo"/>
@@ -201,7 +201,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="beZ-Vd-KEK">
-                                <rect key="frame" x="20" y="798" width="374" height="44"/>
+                                <rect key="frame" x="20" y="754" width="353" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="jwT-TS-EwJ"/>
                                 </constraints>
@@ -257,6 +257,11 @@
             <point key="canvasLocation" x="1446.9767441860465" y="7.7253218884120178"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="2Aw-E6-n1v">
+            <size key="intrinsicContentSize" width="300" height="50"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

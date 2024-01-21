@@ -81,3 +81,9 @@ class AddColorViewController: UIViewController {
         }
     }
 }
+
+extension AddColorViewController: UIColorPickerViewControllerDelegate {
+    func colorPickerViewController(_ viewController: UIColorPickerViewController, didSelect color: UIColor, continuously: Bool) {
+        selectedColor = color
+    }
+}
