@@ -16,7 +16,7 @@ class ColorTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         colorLabel.textColor = .white
-        // Clearing the default selection gray color
+        // Clearing the default gray color selection
         let view = UIView()
         view.backgroundColor = .clear
         selectedBackgroundView = view
@@ -27,7 +27,7 @@ class ColorTableViewCell: UITableViewCell {
         changeReorderColor()
     }
     
-    func set(color: Color){
+    func set(color: Color) {
         if let hexColor = color.value {
             colorLabel.text = color.name
             backgroundColor = UIColor(hex: hexColor)

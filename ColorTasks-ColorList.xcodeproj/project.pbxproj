@@ -20,11 +20,8 @@
 		7039907F2B4D3A9F00CB5F80 /* ColorDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7039907E2B4D3A9F00CB5F80 /* ColorDescriptionView.swift */; };
 		703990852B4D4AED00CB5F80 /* ColorDescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 703990842B4D4AED00CB5F80 /* ColorDescriptionView.xib */; };
 		706C73062B5D276800A1EB84 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706C73052B5D276800A1EB84 /* UserDefaultsStorage.swift */; };
-		706C73082B5D301800A1EB84 /* ColorOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706C73072B5D301800A1EB84 /* ColorOrder.swift */; };
-		706C730A2B5D30E400A1EB84 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706C73092B5D30E400A1EB84 /* Constants.swift */; };
 		706C730C2B5D317500A1EB84 /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706C730B2B5D317500A1EB84 /* ColorExt.swift */; };
 		706C730F2B5D328900A1EB84 /* ColorDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706C730E2B5D328900A1EB84 /* ColorDataManager.swift */; };
-		706C73112B5D364E00A1EB84 /* AppEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706C73102B5D364E00A1EB84 /* AppEntry.swift */; };
 		706E416C2B4FEC920051B3A2 /* ColorTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E416B2B4FEC920051B3A2 /* ColorTextField.swift */; };
 		706E416E2B4FECA10051B3A2 /* ColorTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706E416D2B4FECA10051B3A2 /* ColorTextField.xib */; };
 		706E41702B5006B20051B3A2 /* AddColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706E416F2B5006B20051B3A2 /* AddColorViewController.swift */; };
@@ -71,11 +68,8 @@
 		7039907E2B4D3A9F00CB5F80 /* ColorDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDescriptionView.swift; sourceTree = "<group>"; };
 		703990842B4D4AED00CB5F80 /* ColorDescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorDescriptionView.xib; sourceTree = "<group>"; };
 		706C73052B5D276800A1EB84 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
-		706C73072B5D301800A1EB84 /* ColorOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorOrder.swift; sourceTree = "<group>"; };
-		706C73092B5D30E400A1EB84 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		706C730B2B5D317500A1EB84 /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
 		706C730E2B5D328900A1EB84 /* ColorDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDataManager.swift; sourceTree = "<group>"; };
-		706C73102B5D364E00A1EB84 /* AppEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEntry.swift; sourceTree = "<group>"; };
 		706E416B2B4FEC920051B3A2 /* ColorTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTextField.swift; sourceTree = "<group>"; };
 		706E416D2B4FECA10051B3A2 /* ColorTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorTextField.xib; sourceTree = "<group>"; };
 		706E416F2B5006B20051B3A2 /* AddColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddColorViewController.swift; sourceTree = "<group>"; };
@@ -194,9 +188,8 @@
 		706C72FA2B5D0B4700A1EB84 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				706E41C42B543A9C0051B3A2 /* UIUtil.swift */,
 				706C73052B5D276800A1EB84 /* UserDefaultsStorage.swift */,
-				706C73092B5D30E400A1EB84 /* Constants.swift */,
+				706E41C42B543A9C0051B3A2 /* UIUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -287,8 +280,6 @@
 			children = (
 				706E41EC2B5543170051B3A2 /* Color+CoreDataClass.swift */,
 				708122C32B568B500022F20D /* Color+CoreDataProperties.swift */,
-				706C73072B5D301800A1EB84 /* ColorOrder.swift */,
-				706C73102B5D364E00A1EB84 /* AppEntry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -428,16 +419,13 @@
 			files = (
 				706E41C92B5444080051B3A2 /* AddColorDelegate.swift in Sources */,
 				706C730C2B5D317500A1EB84 /* ColorExt.swift in Sources */,
-				706C730A2B5D30E400A1EB84 /* Constants.swift in Sources */,
 				700A930F2B46BEB100608225 /* ColorsViewController.swift in Sources */,
 				7039907F2B4D3A9F00CB5F80 /* ColorDescriptionView.swift in Sources */,
 				706C730F2B5D328900A1EB84 /* ColorDataManager.swift in Sources */,
 				706E41C52B543A9C0051B3A2 /* UIUtil.swift in Sources */,
 				708122C52B568B500022F20D /* Color+CoreDataProperties.swift in Sources */,
 				706E416C2B4FEC920051B3A2 /* ColorTextField.swift in Sources */,
-				706C73082B5D301800A1EB84 /* ColorOrder.swift in Sources */,
 				7039907A2B4C3ECE00CB5F80 /* ColorTableViewCell.swift in Sources */,
-				706C73112B5D364E00A1EB84 /* AppEntry.swift in Sources */,
 				706E41DD2B5532530051B3A2 /* Colors.xcdatamodeld in Sources */,
 				700A930B2B46BEB100608225 /* AppDelegate.swift in Sources */,
 				706C73062B5D276800A1EB84 /* UserDefaultsStorage.swift in Sources */,
