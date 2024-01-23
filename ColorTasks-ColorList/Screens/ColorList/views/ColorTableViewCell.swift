@@ -7,11 +7,9 @@
 
 import UIKit
 
-// TODO: show the 
-
 class ColorTableViewCell: UITableViewCell {
     
-    @IBOutlet var colorLabel: UILabel!
+    @IBOutlet private var colorLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,9 +25,9 @@ class ColorTableViewCell: UITableViewCell {
         changeReorderColor()
     }
     
-    func set(color: Color) {
-        if let hexColor = color.value {
-            colorLabel.text = color.name
+    func configure(model: Color) {
+        if let hexColor = model.value {
+            colorLabel.text = model.name
             backgroundColor = UIColor(hex: hexColor)
         }
     }

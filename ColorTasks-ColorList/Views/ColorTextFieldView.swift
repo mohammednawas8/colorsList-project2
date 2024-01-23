@@ -7,17 +7,15 @@
 
 import UIKit
 
-// TODO: Create a common nib view loader
-
 @IBDesignable
-class ColorTextField: UIView {
+class ColorTextFieldView: UIView {
     
     @IBOutlet var view: UIView!
     @IBOutlet var textField: UITextField!
     @IBOutlet var hintLabel: UILabel!
+    
     private var textFieldHeight: CGFloat = CGFloat(0)
-    
-    
+
     @IBInspectable var hint: String = "Label" {
         didSet {
             hintLabel.text = hint

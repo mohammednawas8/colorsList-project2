@@ -9,11 +9,9 @@ import UIKit
 
 @IBDesignable
 class ColorDescriptionView : UIView {
-    @IBOutlet var view: UIView!
-    @IBOutlet var descriptionLabel: UILabel!
-    private struct Constants {
-        static let NIB_NAME = "ColorDescriptionView"
-    }
+    
+    @IBOutlet private var view: UIView!
+    @IBOutlet private var descriptionLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,23 +23,18 @@ class ColorDescriptionView : UIView {
         commonInit()
     }
     
-    func commonInit(){
-        view = loadViewFromNib(nibName: Constants.NIB_NAME)
+    func commonInit() {
+        guard let fileName = #file.getFileNamePath() else { return }
+        view = loadViewFromNib(nibName: fileName)
         view.frame = self.bounds // Matching the loaded view from the nib with the ColorDescriptionView
         addSubview(view)
     }
     
-    func loadViewFromNib(nibName: String) -> UIView {
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: nibName, bundle: bundle)
-        let view = nib.instantiate(withOwner: self)[0] as! UIView
-        return view
-    }
-    
-    func setBackgroundColor(color: UIColor){
+    func setBackgroundColor(color: UIColor) {
         view.backgroundColor = color
     }
-    func setDescription(description: String){
+    
+    func setDescription(description: String) {
         descriptionLabel.text = description
     }
 }

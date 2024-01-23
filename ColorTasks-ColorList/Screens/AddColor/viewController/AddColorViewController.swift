@@ -7,15 +7,25 @@
 
 import UIKit
 
-class AddColorViewController: UIViewController {
+protocol AddColorViewControllerDelegate: AnyObject {
+    func didAddNewColor(color: Color)
+}
+
+class AddColorViewController: BaseUIViewController {
     
-    @IBOutlet var navigationBar: UINavigationBar!
-    @IBOutlet var colorDescriptionTextView: UITextView!
-    @IBOutlet var colorButton: UIButton!
-    @IBOutlet var titleTextField: ColorTextField!
-    @IBOutlet var descriptionTextView: UITextView!
+    @IBOutlet private var navigationBar: UINavigationBar!
+    @IBOutlet private var colorDescriptionTextView: UITextView!
+    @IBOutlet private var colorButton: UIButton!
+    @IBOutlet private var titleTextFieldView: ColorTextFieldView!
+    @IBOutlet private var descriptionTextView: UITextView!
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private lazy var colorPicker: UIColorPickerViewController = {
+        let uiColorPicker = UIColorPickerViewController()
+        uiColorPicker.delegate = self
+        uiColorPicker.title = "Colors"
+        uiColorPicker.modalPresentationStyle = .pageSheet
+        return uiColorPicker
+    }()
     
     var selectedColor = UIColor.orange {
         didSet {
@@ -23,18 +33,12 @@ class AddColorViewController: UIViewController {
         }
     }
     
-    weak var delegate: AddColorDelegate? = nil
+    weak var delegate: AddColorViewControllerDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hideBars()
         configureNavigationBar()
         configureTextView()
-    }
-    
-    func hideBars() {
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        navigationController?.setToolbarHidden(true, animated: false)
     }
     
     func configureNavigationBar() {
@@ -42,7 +46,6 @@ class AddColorViewController: UIViewController {
             .font: UIFont.boldSystemFont(ofSize: 18),
         ]
         navigationBar.titleTextAttributes = titleAttributes
-        
     }
     
     func configureTextView() {
@@ -53,31 +56,24 @@ class AddColorViewController: UIViewController {
     }
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        dismiss(animated: true)
     }
+    
     @IBAction func colorButtonTapped(_ sender: Any) {
-        let colorPicker = UIColorPickerViewController()
-        colorPicker.delegate = self
-        colorPicker.title = "Colors"
-        colorPicker.modalPresentationStyle = .pageSheet
         present(colorPicker, animated: true)
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
-        // TODO: Save a new color using Core Data
-        let color = Color(context: context)
-        color.name = titleTextField.textField.text
-        color.colorDescription = descriptionTextView.text
-        color.value = selectedColor.toHexString()
-        color.id = UUID().uuidString
-        do {
-            try context.save()
-            navigationController?.popViewController(animated: true)
-            delegate?.didAddNewColor(color: color)
-            print("Saved new color successfully")
-        } catch {
-            present(createAlertController(message: "Something went wrong while saving the color"), animated: true)
-            print("Error while saving a color \(error)")
+        let savedColor = ColorDataManager.shared.saveColor(
+            name: titleTextFieldView.textField.text,
+            description: descriptionTextView.text,
+            value: selectedColor.toHexString()
+        )
+        if let savedColor {
+            dismiss(animated: true)
+            delegate?.didAddNewColor(color: savedColor)
+        } else {
+            presentErrorAlert(title: "Saving error", message: "Something went wrong !")
         }
     }
 }

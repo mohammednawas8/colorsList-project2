@@ -14,17 +14,17 @@ enum UserDefaultsKey: String {
 
 struct ColorOrder {
     @UserDefaultsStorage(key: .ColorOrder)
-    var order: [String]?
+    static var order: [String]?
 }
 
 struct AppEntry {
     @UserDefaultsStorage(key: .AppEntry)
-    var value: Bool?
+    static var value: Bool?
 }
-
 
 @propertyWrapper
 class UserDefaultsStorage<T: Codable> {
+    
     private var storage: UserDefaults
     private var key: UserDefaultsKey
     

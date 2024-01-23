@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorTextField" customModule="ColorTasks_ColorList" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorTextFieldView" customModule="ColorTasks_ColorList" customModuleProvider="target">
             <connections>
                 <outlet property="hintLabel" destination="WGt-hL-YVA" id="SS8-oT-6IQ"/>
                 <outlet property="textField" destination="Jsq-f0-zde" id="7Ex-IF-OHZ"/>
@@ -36,6 +36,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Jsq-f0-zde" firstAttribute="top" secondItem="WGt-hL-YVA" secondAttribute="bottom" constant="10" id="197-cM-TEJ"/>
+                <constraint firstAttribute="bottom" secondItem="Jsq-f0-zde" secondAttribute="bottom" id="IoB-Hk-o6p"/>
                 <constraint firstItem="WGt-hL-YVA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ezn-r0-dRv"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Jsq-f0-zde" secondAttribute="trailing" id="gc2-Wj-SdD"/>
                 <constraint firstItem="WGt-hL-YVA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="lD1-eD-KOU"/>
