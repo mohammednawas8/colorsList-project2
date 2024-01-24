@@ -14,11 +14,9 @@ class ColorTextFieldView: UIView {
     @IBOutlet var textField: UITextField!
     @IBOutlet var hintLabel: UILabel!
     
-    private var textFieldHeight: CGFloat = CGFloat(0)
-
-    @IBInspectable var hint: String = "Label" {
+    @IBInspectable var textFieldTitle: String = "" {
         didSet {
-            hintLabel.text = hint
+            hintLabel.text = textFieldTitle
         }
     }
     
@@ -28,10 +26,9 @@ class ColorTextFieldView: UIView {
         }
     }
     
-    @IBInspectable var circular: Bool = true {
+    @IBInspectable var cornerRadius: Bool = true {
         didSet {
-            let cornerRadius = circular ? textFieldHeight/2 : 30
-            textField.layer.cornerRadius = CGFloat(cornerRadius)
+            setCornerRadius()
         }
     }
     
@@ -46,34 +43,32 @@ class ColorTextFieldView: UIView {
     }
     
     func commonInit() {
-        guard let fileName = #file.getFileNamePath() else { return }
-        view = loadViewFromNib(nibName: fileName)
+        view = loadViewFromNib()
         view.frame = self.bounds
         addSubview(view)
         setupTextField()
     }
     
     func setupTextField() {
-        let viewHeight = view.frame.height
-        textFieldHeight = viewHeight - 10 - hintLabel.frame.height
         textField.clipsToBounds = true
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.borderWidth = 1
         textField.borderStyle = .none
-        setHeight()
+        setCornerRadius()
         setTextPadding()
     }
     
-    func setHeight() {
-        NSLayoutConstraint.activate([
-            textField.heightAnchor.constraint(equalToConstant: textFieldHeight)
-        ])
+    private func setCornerRadius() {
+        let textFieldHeight = textField.bounds.height
+        let cornerRadius = cornerRadius ? textFieldHeight/1.5 : 0
+        textField.layer.cornerRadius = CGFloat(cornerRadius)
     }
     
     func setTextPadding() {
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textFieldHeight))
+        // I Couldn't find Content Inset for textField it is only availabe for textView
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 0))
         textField.leftViewMode = .always
-        textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: -20, height: textFieldHeight))
+        textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: -20, height: 0))
         textField.rightViewMode = .always
     }
     

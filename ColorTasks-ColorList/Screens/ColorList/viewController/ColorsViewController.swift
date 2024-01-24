@@ -128,15 +128,17 @@ class ColorsViewController: BaseUIViewController {
         } else {
             presentErrorAlert(title: "Delete error", message: "Something went wrong")
         }
-        if colorDeletionList.contains(where: { selectedColor?.id == $0.id}) {
+        if colorDeletionList.contains(where: { selectedColor?.id == $0.id }) {
             self.selectedColor = colorList.first
         }
     }
-    
+    // Present as full screen not working
     @objc func addButtonTapped() {
-        guard let addViewController = storyboard?.instantiateViewController(withIdentifier: Constants.ADD_VC_ID) as? AddColorViewController else { return }
-        addViewController.delegate = self
-        navigationController?.present(addViewController, animated: true)
+        guard let addColorViewController: AddColorViewController = instantiateViewController(identifier: Constants.ADD_VC_ID) else { return }
+        addColorViewController.delegate = self
+        addColorViewController.modalPresentationStyle = .fullScreen
+        let navController = UINavigationController(rootViewController: addColorViewController)
+        self.present(navController, animated: true, completion: nil)
     }
 }
 
@@ -154,7 +156,7 @@ extension ColorsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CELL_IDENTIFIER, for: indexPath) as! ColorTableViewCell
-        cell.configure(model: colorList[indexPath.row])
+        cell.configureCell(model: colorList[indexPath.row])
         return cell
     }
     

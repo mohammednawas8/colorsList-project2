@@ -121,28 +121,17 @@
         <!--Add Color View Controller-->
         <scene sceneID="FF9-0H-dRn">
             <objects>
-                <viewController storyboardIdentifier="AddViewController" id="Iyb-Qf-0i6" customClass="AddColorViewController" customModule="ColorTasks_ColorList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddViewController" modalPresentationStyle="fullScreen" id="Iyb-Qf-0i6" customClass="AddColorViewController" customModule="ColorTasks_ColorList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0YR-b3-U6M">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oCu-Mi-KoH">
-                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <navigationItem title="New Color" id="0SH-ri-L69">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" style="plain" id="ump-Qe-nWL">
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <connections>
-                                                <action selector="cancelButtonTapped:" destination="Iyb-Qf-0i6" id="aX1-3f-cJM"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Aw-E6-n1v" customClass="ColorTextFieldView" customModule="ColorTasks_ColorList" customModuleProvider="target">
-                                <rect key="frame" x="20" y="118" width="353" height="50"/>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="353" placeholderIntrinsicHeight="70" translatesAutoresizingMaskIntoConstraints="NO" id="2Aw-E6-n1v" customClass="ColorTextFieldView" customModule="ColorTasks_ColorList" customModuleProvider="target">
+                                <rect key="frame" x="20" y="69" width="353" height="80"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="pfb-mE-Yjl"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="textFieldHeight">
                                         <integer key="value" value="100"/>
@@ -157,7 +146,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpV-RX-FD7">
-                                <rect key="frame" x="30" y="198" width="343" height="30"/>
+                                <rect key="frame" x="30" y="179" width="343" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Select Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idA-m0-qrw">
                                         <rect key="frame" x="0.0" y="0.0" width="243" height="30"/>
@@ -182,13 +171,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNq-fW-2wC">
-                                <rect key="frame" x="29.999999999999993" y="267" width="94.333333333333314" height="20.333333333333314"/>
+                                <rect key="frame" x="29.999999999999993" y="248.00000000000003" width="94.333333333333314" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EKW-iU-frf">
-                                <rect key="frame" x="20" y="297.33333333333331" width="353" height="200"/>
+                                <rect key="frame" x="20" y="278.33333333333331" width="353" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="JWc-jx-Euo"/>
@@ -224,28 +213,25 @@
                         <constraints>
                             <constraint firstItem="2Aw-E6-n1v" firstAttribute="trailing" secondItem="2l0-JK-xLH" secondAttribute="trailing" constant="-20" id="0XU-ts-Gqm"/>
                             <constraint firstItem="2l0-JK-xLH" firstAttribute="trailing" secondItem="EKW-iU-frf" secondAttribute="trailing" constant="20" id="37B-ex-zoh"/>
+                            <constraint firstItem="beZ-Vd-KEK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="EKW-iU-frf" secondAttribute="bottom" constant="20" id="AdC-c3-XuR"/>
                             <constraint firstItem="beZ-Vd-KEK" firstAttribute="leading" secondItem="2l0-JK-xLH" secondAttribute="leading" constant="20" id="C2Z-f8-WZy"/>
+                            <constraint firstItem="2Aw-E6-n1v" firstAttribute="top" secondItem="2l0-JK-xLH" secondAttribute="top" constant="10" id="HsO-BR-DqT"/>
                             <constraint firstItem="2l0-JK-xLH" firstAttribute="bottom" secondItem="beZ-Vd-KEK" secondAttribute="bottom" constant="20" id="Kai-ad-jzT"/>
                             <constraint firstItem="2l0-JK-xLH" firstAttribute="trailing" secondItem="beZ-Vd-KEK" secondAttribute="trailing" constant="20" id="QLF-4o-wW7"/>
-                            <constraint firstItem="oCu-Mi-KoH" firstAttribute="leading" secondItem="2l0-JK-xLH" secondAttribute="leading" id="RDY-UE-abY"/>
-                            <constraint firstItem="oCu-Mi-KoH" firstAttribute="top" secondItem="2l0-JK-xLH" secondAttribute="top" id="UM9-Kl-7ZC"/>
                             <constraint firstItem="HNq-fW-2wC" firstAttribute="top" secondItem="xpV-RX-FD7" secondAttribute="bottom" constant="39" id="Uzd-yQ-2sW"/>
                             <constraint firstItem="2Aw-E6-n1v" firstAttribute="leading" secondItem="2l0-JK-xLH" secondAttribute="leading" constant="20" id="V6P-Z6-8ms"/>
                             <constraint firstItem="HNq-fW-2wC" firstAttribute="leading" secondItem="2l0-JK-xLH" secondAttribute="leading" constant="30" id="WTJ-jr-vro"/>
                             <constraint firstItem="EKW-iU-frf" firstAttribute="leading" secondItem="2l0-JK-xLH" secondAttribute="leading" constant="20" id="YA9-iR-fNh"/>
-                            <constraint firstItem="2Aw-E6-n1v" firstAttribute="top" secondItem="oCu-Mi-KoH" secondAttribute="bottom" constant="15" id="b9M-fe-yvc"/>
                             <constraint firstItem="xpV-RX-FD7" firstAttribute="leading" secondItem="0YR-b3-U6M" secondAttribute="leading" constant="30" id="f6k-xx-ULh"/>
                             <constraint firstItem="2l0-JK-xLH" firstAttribute="trailing" secondItem="xpV-RX-FD7" secondAttribute="trailing" constant="20" id="fTv-ee-LC6"/>
                             <constraint firstItem="xpV-RX-FD7" firstAttribute="top" secondItem="2Aw-E6-n1v" secondAttribute="bottom" constant="30" id="pwX-Dg-gwr"/>
                             <constraint firstItem="EKW-iU-frf" firstAttribute="top" secondItem="HNq-fW-2wC" secondAttribute="bottom" constant="10" id="x7V-a9-tKh"/>
-                            <constraint firstItem="oCu-Mi-KoH" firstAttribute="trailing" secondItem="2l0-JK-xLH" secondAttribute="trailing" id="zLu-CF-KVc"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="colorButton" destination="6Yh-MX-KAN" id="EbN-sc-75i"/>
                         <outlet property="colorDescriptionTextView" destination="EKW-iU-frf" id="aTB-wG-s5M"/>
                         <outlet property="descriptionTextView" destination="EKW-iU-frf" id="bKV-tm-ebZ"/>
-                        <outlet property="navigationBar" destination="oCu-Mi-KoH" id="qdv-ef-aWE"/>
                         <outlet property="titleTextFieldView" destination="2Aw-E6-n1v" id="m0D-0e-5OS"/>
                     </connections>
                 </viewController>
@@ -256,7 +242,7 @@
     </scenes>
     <designables>
         <designable name="2Aw-E6-n1v">
-            <size key="intrinsicContentSize" width="300" height="50"/>
+            <size key="intrinsicContentSize" width="353" height="70"/>
         </designable>
     </designables>
     <resources>

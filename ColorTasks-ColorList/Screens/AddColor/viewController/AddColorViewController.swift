@@ -13,7 +13,6 @@ protocol AddColorViewControllerDelegate: AnyObject {
 
 class AddColorViewController: BaseUIViewController {
     
-    @IBOutlet private var navigationBar: UINavigationBar!
     @IBOutlet private var colorDescriptionTextView: UITextView!
     @IBOutlet private var colorButton: UIButton!
     @IBOutlet private var titleTextFieldView: ColorTextFieldView!
@@ -29,11 +28,11 @@ class AddColorViewController: BaseUIViewController {
     
     var selectedColor = UIColor.orange {
         didSet {
-            colorButton.configuration?.baseBackgroundColor = selectedColor
+            colorButton.backgroundColor = selectedColor
         }
     }
     
-    weak var delegate: AddColorViewControllerDelegate? = nil
+    weak var delegate: AddColorViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +41,16 @@ class AddColorViewController: BaseUIViewController {
     }
     
     func configureNavigationBar() {
-        let titleAttributes:[NSAttributedString.Key:Any] = [
-            .font: UIFont.boldSystemFont(ofSize: 18),
-        ]
-        navigationBar.titleTextAttributes = titleAttributes
+        guard let navigationBar = navigationController?.navigationBar else { return }
+        title = "New Color"
+        navigationBar.addBottomBoder(height: 1)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelTapped))
+        cancelButton.tintColor = .black
+        navigationItem.leftBarButtonItem = cancelButton
+    }
+    
+    @objc func cancelTapped() {
+        dismiss(animated: true)
     }
     
     func configureTextView() {

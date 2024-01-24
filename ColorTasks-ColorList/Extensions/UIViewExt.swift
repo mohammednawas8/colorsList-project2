@@ -8,9 +8,14 @@
 import UIKit
 
 extension UIView {
-    func loadViewFromNib(nibName: String) -> UIView {
+    
+    var viewName: String {
+        return String(describing: type(of: self))
+    }
+    
+    func loadViewFromNib() -> UIView {
         let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: nibName, bundle: bundle)
+        let nib = UINib(nibName: viewName, bundle: bundle)
         let view = nib.instantiate(withOwner: self)[0] as? UIView
         return view ?? UIView()
     }

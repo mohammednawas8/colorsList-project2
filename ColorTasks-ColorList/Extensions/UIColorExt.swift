@@ -8,6 +8,11 @@
 import UIKit
 
 extension UIColor {
+    
+    static var veryLightGray: UIColor {
+        return UIColor(hex: "ededed") ?? .lightGray
+    }
+    
     func toHexString() -> String {
             var r:CGFloat = 0
             var g:CGFloat = 0
