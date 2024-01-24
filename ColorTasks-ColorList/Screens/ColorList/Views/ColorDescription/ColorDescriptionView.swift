@@ -24,8 +24,7 @@ class ColorDescriptionView : UIView {
     }
     
     func commonInit() {
-        guard let fileName = #file.getFileNamePath() else { return }
-        view = loadViewFromNib(nibName: fileName)
+        view = loadViewFromNib()
         view.frame = self.bounds // Matching the loaded view from the nib with the ColorDescriptionView
         addSubview(view)
     }

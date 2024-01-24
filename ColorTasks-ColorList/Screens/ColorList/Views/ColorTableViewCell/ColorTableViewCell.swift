@@ -25,7 +25,7 @@ class ColorTableViewCell: UITableViewCell {
         changeReorderColor()
     }
     
-    func configure(model: Color) {
+    func configureCell(model: Color) {
         if let hexColor = model.value {
             colorLabel.text = model.name
             backgroundColor = UIColor(hex: hexColor)
