@@ -141,7 +141,7 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Aw-E6-n1v" customClass="ColorTextFieldView" customModule="ColorTasks_ColorList" customModuleProvider="target">
-                                <rect key="frame" x="20" y="118" width="353" height="80"/>
+                                <rect key="frame" x="20" y="118" width="353" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="textFieldHeight">
@@ -157,7 +157,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpV-RX-FD7">
-                                <rect key="frame" x="30" y="228" width="343" height="30"/>
+                                <rect key="frame" x="30" y="198" width="343" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Select Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idA-m0-qrw">
                                         <rect key="frame" x="0.0" y="0.0" width="243" height="30"/>
@@ -182,13 +182,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNq-fW-2wC">
-                                <rect key="frame" x="29.999999999999993" y="297" width="94.333333333333314" height="20.333333333333314"/>
+                                <rect key="frame" x="29.999999999999993" y="267" width="94.333333333333314" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EKW-iU-frf">
-                                <rect key="frame" x="20" y="327.33333333333331" width="353" height="199.99999999999994"/>
+                                <rect key="frame" x="20" y="297.33333333333331" width="353" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="JWc-jx-Euo"/>
@@ -254,6 +254,11 @@
             <point key="canvasLocation" x="1446.9767441860465" y="7.7253218884120178"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="2Aw-E6-n1v">
+            <size key="intrinsicContentSize" width="300" height="50"/>
+        </designable>
+    </designables>
     <resources>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

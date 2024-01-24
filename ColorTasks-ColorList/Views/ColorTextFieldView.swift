@@ -46,18 +46,11 @@ class ColorTextFieldView: UIView {
     }
     
     func commonInit() {
-        view = loadTextFieldFromNib(nibName: "ColorTextField")
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        guard let fileName = #file.getFileNamePath() else { return }
+        view = loadViewFromNib(nibName: fileName)
         view.frame = self.bounds
         addSubview(view)
         setupTextField()
-    }
-    
-    func loadTextFieldFromNib(nibName: String) -> UIView {
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: nibName, bundle: bundle)
-        let textField = nib.instantiate(withOwner: self)[0] as! UIView
-        return textField
     }
     
     func setupTextField() {
