@@ -136,8 +136,8 @@ class ColorsViewController: BaseUIViewController {
     @objc func addButtonTapped() {
         guard let addColorViewController: AddColorViewController = instantiateViewController(identifier: Constants.ADD_VC_ID) else { return }
         addColorViewController.delegate = self
-        addColorViewController.modalPresentationStyle = .fullScreen
         let navController = UINavigationController(rootViewController: addColorViewController)
+        navController.modalPresentationStyle = .fullScreen
         self.present(navController, animated: true, completion: nil)
     }
 }

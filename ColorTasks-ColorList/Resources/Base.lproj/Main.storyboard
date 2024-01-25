@@ -103,7 +103,7 @@
         <!--Navigation Controller-->
         <scene sceneID="bmx-4d-90B">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8rj-f4-Yle" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="8rj-f4-Yle" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="COE-7f-ufF">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
@@ -121,7 +121,7 @@
         <!--Add Color View Controller-->
         <scene sceneID="FF9-0H-dRn">
             <objects>
-                <viewController storyboardIdentifier="AddViewController" modalPresentationStyle="fullScreen" id="Iyb-Qf-0i6" customClass="AddColorViewController" customModule="ColorTasks_ColorList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddViewController" id="Iyb-Qf-0i6" customClass="AddColorViewController" customModule="ColorTasks_ColorList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0YR-b3-U6M">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
