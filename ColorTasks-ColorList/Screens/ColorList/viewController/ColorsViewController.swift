@@ -132,7 +132,7 @@ class ColorsViewController: BaseUIViewController {
             self.selectedColor = colorList.first
         }
     }
-    // Present as full screen not working
+
     @objc func addButtonTapped() {
         guard let addColorViewController: AddColorViewController = instantiateViewController(identifier: Constants.ADD_VC_ID) else { return }
         addColorViewController.delegate = self
